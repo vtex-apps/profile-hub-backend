@@ -1,0 +1,28 @@
+# To really understand GraphQL, go to http://graphql.org/guide/
+type Query {
+  # Cache control can only be set at root fields
+  reviews(productId: ID!): [Review] @cacheControl(scope: PUBLIC, maxAge: SHORT)
+  rating(productId: ID!): Float
+}
+
+type Mutation {
+  # You should always return the whole object in a mutation, not only a boolean. This will help in browser caching
+  newReview(review: ReviewInput): Review
+}
+
+# It is necessary to generate input types
+# ref: http://graphql.org/graphql-js/mutations-and-input-types/
+input ReviewInput {
+  productId: String!
+  rating: Int!
+  review: String
+}
+
+type Review {
+  id: ID!
+  productId: String!
+  cacheId: ID!
+  author: String!
+  rating: Int!
+  review: String
+}
