@@ -1,7 +1,7 @@
 {
-  "name": "graphql-example",
+  "name": "profile-hub-backend",
   "vendor": "vtex",
-  "version": "0.3.0",
+  "version": "0.0.1",
   "title": "GraphQL Example",
   "description": "Reference app for VTEX IO GraphQL Services",
   "mustUpdateAt": "2022-01-04",
@@ -25,6 +25,13 @@
     },
     {
       "name": "graphql-query"
+    },
+    {
+      "name": "outbound-access",
+      "attrs": {
+        "host": "portal.vtexcommercestable.com.br",
+        "path": "/api/storage/profile-system/profiles/*"
+      }
     }
   ],
   "$schema": "https://raw.githubusercontent.com/vtex/node-vtex-api/master/gen/manifest.schema"
