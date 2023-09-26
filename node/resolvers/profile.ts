@@ -9,9 +9,6 @@ export const profile = async (
   { clients: { profile: profileClient } }: Context
 ) => {
   const { key, value } = args
-
-  console.log('Si llego acá***************')
-
   const answer = await profileClient.getProfileInfo(key, value)
 
   const [{ document, id }] = answer
