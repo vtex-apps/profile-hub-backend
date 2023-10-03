@@ -10,24 +10,9 @@ export const profile = async (
 ) => {
   const { key, value } = args
   const answer = await profileClient.getProfileInfo(key, value)
-
-  const [{ document, id }] = answer
-  const {
-    firstName,
-    lastName,
-    email,
-    birthDate,
-    document: userDocument,
-    documentType,
-  } = document
+  const [{ document }] = answer
 
   return {
-    id,
-    firstName,
-    lastName,
-    email,
-    birthDate,
-    document: userDocument,
-    documentType,
+    document
   }
 }

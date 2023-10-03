@@ -16,14 +16,10 @@ input BookInput {
   name: String
 }
 
+scalar JSON
+
 type Profile {
-  id: String
-  firstName: String
-  lastName: String
-  email: String
-  birthDate: String
-  document: String
-  documentType: String
+  document: JSON
 }
 
 type Query {
