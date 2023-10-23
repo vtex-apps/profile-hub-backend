@@ -2,6 +2,7 @@ import { IOClients } from '@vtex/api'
 
 import { BookClient } from './book'
 import { MarkdownClient } from './markdown'
+import { ProfileClient } from './profile'
 
 export class Clients extends IOClients {
   public get book() {
@@ -10,5 +11,9 @@ export class Clients extends IOClients {
 
   public get markdown() {
     return this.getOrSet('markdown', MarkdownClient)
+  }
+
+  public get profile() {
+    return this.getOrSet('profile', ProfileClient)
   }
 }
