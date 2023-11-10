@@ -43,7 +43,6 @@ export class ProfileClient extends JanusClient {
   }
 
   public updateProfileInfo = async (value: string, newValues: JSON) => {
-    console.log(this.context)
     const testToken =
       'eyJhbGciOiJFUzI1NiIsImtpZCI6IkZBMjlDNDA0MTc5MzAzREI4MTIxNUVGMjA2Njc1NkZBRUI4MzUzMEUiLCJ0eXAiOiJqd3QifQ.eyJzdWIiOiJhbmRyZXMubW9yZW5vQHZ0ZXguY29tLmJyIiwiYWNjb3VudCI6ImNhc2lub2ZycWEiLCJhdWRpZW5jZSI6ImFkbWluIiwic2VzcyI6Ijk1MDRjOWJjLTZlNmQtNDI1My04NGMwLTYzYjc4YmJhMzk3MiIsImV4cCI6MTY5NTQ3NzY5NywidXNlcklkIjoiMjlkYmM1M2UtNjkwZC00NWNjLWE4ODAtNDFhYTkxMDIyNThiIiwiaWF0IjoxNjk1MzkxMjk3LCJpc3MiOiJ0b2tlbi1lbWl0dGVyIiwianRpIjoiZjBlMTkyNmMtNTY3My00YTc0LWE1Y2ItNDBjZmU3M2FlNGZjIn0.-9tVm-vl1TQ5fZwdFE1zXBRjKVbSaI3bEfKQeGXqwSvWzJNwuzkK6LiPxsEEnq0E0s3pHNU0IQDn1ethEhdFAA'
 
@@ -56,9 +55,7 @@ export class ProfileClient extends JanusClient {
 
     const url = `${this.baseUrl}/${value}`
   
-    const response = await this.patch<Profile>(url, {
-      body: JSON.stringify(newValues), 
-    },{
+    const response = await this.patch<Profile>(url, newValues, {
       metric: 'profile-system-updateProfileInfo'
     })
 
