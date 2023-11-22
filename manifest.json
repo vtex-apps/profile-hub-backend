@@ -32,6 +32,13 @@
         "host": "portal.vtexcommercestable.com.br",
         "path": "/api/storage/profile-system/profiles/*"
       }
+    },
+    {
+      "name": "outbound-access",
+      "attrs": {
+        "host": "portal.vtexcommercestable.com.br",
+        "path": "/api/tenant/tenants"
+      }
     }
   ],
   "$schema": "https://raw.githubusercontent.com/vtex/node-vtex-api/master/gen/manifest.schema"

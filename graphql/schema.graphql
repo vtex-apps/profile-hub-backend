@@ -21,6 +21,9 @@ scalar JSON
 type Profile {
   document: JSON
 }
+type Response{
+  id: String
+}
 
 type Query {
   # Cache control can only be set at root fields
@@ -45,4 +48,5 @@ type Mutation {
   delete(id: String): Boolean
   editBook(id: ID!, book: BookInput!): Book
   newBook(book: BookInput!): Book
+  editProfile(value: String!, newValues: JSON): Response
 }
